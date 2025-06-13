@@ -1,1 +1,1 @@
-export const BACKEND = "http://localhost:8080"
+export const BACKEND = "https://chat-app-backend-g8la.vercel.app/"
