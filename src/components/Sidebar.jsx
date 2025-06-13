@@ -11,6 +11,7 @@ import useGetOtherUsers from "../hooks/useGetOtherUsers";
 
 import { FiInstagram } from "react-icons/fi";
 import { setAuthUser } from "../redux/userSlice";
+import { BACKEND } from "../constants.jsx";
 
 
 const Sidebar = () => {
@@ -22,7 +23,8 @@ const Sidebar = () => {
 
   const logoutHandler = async () => {
     try {
-      const res = await axios.get(`http://localhost:8080/api/v1/user/logout`);
+      axios.defaults.withCredentials=true;
+      const res = await axios.get(`${BACKEND}/api/v1/user/logout`);
       navigate("/login");
       toast.success(res.data.message);
       dispatch(setAuthUser(null));

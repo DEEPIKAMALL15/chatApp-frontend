@@ -4,6 +4,7 @@ import toast from "react-hot-toast"
 import axios from "axios"
 import { useDispatch } from 'react-redux'
 import { setAuthUser } from '../redux/userSlice'
+import { BACKEND } from '../constants.jsx'
 
 
 const Login = () => {
@@ -17,8 +18,8 @@ const Login = () => {
   const onSubmitHandler = async (e) => {
       e.preventDefault();
       try{
-     
-        const res = await axios.post(`http://:8080/api/v1/user/login`,user,{
+        
+        const res = await axios.post(`${BACKEND}/api/v1/user/login`,user,{
           headers: {
             'Content-Type' : 'application/json'
           },
@@ -27,11 +28,11 @@ const Login = () => {
         
           navigate("/");
           
-          dispatch(setAuthUser(res.data));
+          dispatch(setAuthUser(res?.data));
   
         
       } catch (error) {
-        toast.error(error.response.data.message);
+        toast.error(error.message);
         console.log(error);
       }
       setUser({
