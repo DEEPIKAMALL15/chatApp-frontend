@@ -1,4 +1,4 @@
-/* 
+
 import Signup from './components/Signup';
 import Login from './components/Login';
 import HomePage from './components/HomePage';
@@ -37,7 +37,8 @@ function App() {
       
       const socket = io(BACKEND,{
           query:{
-            userId:authUser._id
+            userId:authUser._id,
+            
           }
       });
       dispatch(setSocket(socket));
@@ -62,8 +63,8 @@ function App() {
 }
 
 export default App;
- */
-import Signup from './components/Signup';
+ 
+/* import Signup from './components/Signup';
 import Login from './components/Login';
 import HomePage from './components/HomePage';
 import './App.css';
@@ -84,30 +85,28 @@ function App() {
   const { authUser } = useSelector(store => store.user);
   const dispatch = useDispatch();
 
-  const socketRef = useRef(null); // ✅ store socket locally
+  
 
-  useEffect(() => {
-    if (authUser && authUser._id) {
-      socketRef.current = io(BACKEND, {
-        query: { userId: authUser._id },
-        withCredentials: true,
+  useEffect(()=>{
+    if(authUser && authUser._id){
+      
+      const socket = io(BACKEND,{
+          query:{
+            userId:authUser._id
+          }
       });
-
-      socketRef.current.on('getOnlineUsers', (onlineUsers) => {
-        dispatch(setOnlineUsers(onlineUsers));
+      dispatch(setSocket(socket));
+      socket.on('getOnlineUsers',(onlineUsers)=>{
+          dispatch(setOnlineUsers(onlineUsers))
       });
-
-      return () => {
-        socketRef.current.disconnect();
-        socketRef.current = null;
-      };
+      return () => socket.close();
     } else {
-      if (socketRef.current) {
-        socketRef.current.disconnect();
-        socketRef.current = null;
+      if(socket){
+        socket.close();
+        dispatch(setSocket(null));
       }
     }
-  }, [authUser]);
+  },[authUser]);
 
   return (
     <div className="p-4 h-screen flex items-center justify-center">
@@ -117,3 +116,4 @@ function App() {
 }
 
 export default App;
+ */
