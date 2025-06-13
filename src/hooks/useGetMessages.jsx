@@ -10,8 +10,10 @@ const useGetMessages = () => {
     useEffect(()=>{
         const fetchMessages = async () =>{
             try{
-                axios.defaults.withCredentials=true;
-                const res = await axios.get(`${BACKEND}/api/v1/message/${selectedUser?._id}`);
+                
+                const res = await axios.get(`${BACKEND}/api/v1/message/${selectedUser?._id}`, {
+  withCredentials: true
+});
                 
                 dispatch(setMessages(res.data));
             } catch (error) {

@@ -9,8 +9,10 @@ const useGetOtherUsers = () => {
   useEffect(() => {
     const fetchOtherUsers = async () => {
       try {
-        axios.defaults.withCredentials = true;
-        const res = await axios.get(`${BACKEND}/api/v1/user/`);
+        
+        const res = await axios.get(`${BACKEND}/api/v1/user/`, {
+  withCredentials: true
+});
         
         dispatch(setOtherUsers(res.data));
       } catch (error) {
