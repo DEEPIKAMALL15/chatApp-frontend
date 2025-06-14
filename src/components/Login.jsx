@@ -19,7 +19,7 @@ const Login = () => {
       e.preventDefault();
       try{
         
-        const res = await axios.post(`${BACKEND}/api/v1/user/login`,user,{
+        const res = await axios.post(BACKEND+`/api/v1/user/login`,user,{
           headers: {
             'Content-Type' : 'application/json'
           },
