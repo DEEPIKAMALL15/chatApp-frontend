@@ -47,7 +47,7 @@ const Login = () => {
     <div className='min-w-96    my-auto' >
       <div className='w-full p-6 text-gray-200 rounded-lg shadow-md bg-gray-400  bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-10  border border-gray-100'>
         <h1 className='text-4xl font-bold text-center '>Login</h1>
-        <form onSubmit={onSubmitHandler} action='' className='flex flex-col gap-2' >
+        <form onSubmit={onSubmitHandler} className='flex flex-col gap-2' >
           
           <div>
             <label className='label p-2 '>
