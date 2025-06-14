@@ -1,1 +1,1 @@
-export const BACKEND = "https://chat-app-backend-g8la.vercel.app"
+export const BACKEND = "https://chat-app-backend-blush.vercel.app"
