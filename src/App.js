@@ -1,14 +1,14 @@
 
-import Signup from './components/Signup';
-import Login from './components/Login';
-import HomePage from './components/HomePage';
+import Signup from './components/Signup.jsx';
+import Login from './components/Login.jsx';
+import HomePage from './components/HomePage.jsx';
 import './App.css';
 import { createBrowserRouter , RouterProvider } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import io from "socket.io-client"
-import { setSocket } from './redux/socketSlice';
-import { setOnlineUsers } from './redux/userSlice';
+import { setSocket } from './redux/socketSlice.js';
+import { setOnlineUsers } from './redux/userSlice.js';
 import { BACKEND } from './constants.jsx';
 
 const router = createBrowserRouter([

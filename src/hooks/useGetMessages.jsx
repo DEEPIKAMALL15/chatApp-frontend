@@ -1,7 +1,7 @@
 import  { useEffect } from 'react'
 import axios from "axios";
 import { useDispatch, useSelector } from 'react-redux';
-import { setMessages } from '../redux/messageSlice';
+import { setMessages } from '../redux/messageSlice.js';
 import { BACKEND } from '../constants.jsx';
 
 const useGetMessages = () => {

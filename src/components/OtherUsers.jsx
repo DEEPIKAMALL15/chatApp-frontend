@@ -28,7 +28,7 @@ export default OtherUsers */
  
  
 import React from 'react';
-import OtherUser from './OtherUser';
+import OtherUser from './OtherUser.jsx';
 
 const OtherUsers = ({ users }) => {
   if (!users || users.length === 0) {

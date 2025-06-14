@@ -1,6 +1,6 @@
  import React from 'react'
-import Sidebar from './Sidebar'
-import MessageContainer from './MessageContainer'
+import Sidebar from './Sidebar.jsx'
+import MessageContainer from './MessageContainer.jsx'
 
 const HomePage = () => {
   return (

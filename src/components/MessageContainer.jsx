@@ -1,6 +1,6 @@
 import React from "react";
-import SendInput from "./SendInput";
-import Messages from "./Messages";
+import SendInput from "./SendInput.jsx";
+import Messages from "./Messages.jsx";
 import {  useSelector } from "react-redux";
 //import { setSelectedUser } from "../redux/userSlice";
 const MessageContainer = () => {

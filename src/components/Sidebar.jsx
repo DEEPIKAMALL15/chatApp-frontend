@@ -2,15 +2,15 @@
 
 import React, { useState } from "react";
 
-import OtherUsers from "./OtherUsers";
+import OtherUsers from "./OtherUsers.jsx";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
-import useGetOtherUsers from "../hooks/useGetOtherUsers";
+import useGetOtherUsers from "../hooks/useGetOtherUsers.jsx";
 
 import { FiInstagram } from "react-icons/fi";
-import { setAuthUser } from "../redux/userSlice";
+import { setAuthUser } from "../redux/userSlice.js";
 import { BACKEND } from "../constants.jsx";
 
 
