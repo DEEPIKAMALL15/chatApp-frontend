@@ -1,13 +1,12 @@
  import React from 'react'
 import Sidebar from './Sidebar.jsx'
 import MessageContainer from './MessageContainer.jsx'
-import { useSelector } from 'react-redux';
-import { useNavigate } from 'react-router';
+
 
 const HomePage = () => {
-  const {authUser} = useSelector(store=>store.user);
+  /* const {authUser} = useSelector(store=>store.user);
   const navigate = useNavigate();
-  if(!authUser)  return ( navigate('/login') ) 
+  if(!authUser)  return ( navigate('/login') )  */
   return (
     
     
